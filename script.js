@@ -21,3 +21,17 @@ let criardiv = (texto) => {
 
 let exibir = (filhos) => Object.keys (filhos) . forEach (criardiv);
 exibir(filhos)
+
+let tocarsom = (letra) => {
+    let audio = new Audio(`./sons/${filhos[letra]}`)
+    audio.play();
+}
+
+let ativardiv = (evento) => {
+    let letra = evento.target.id
+    tocarsom(letra);
+
+}
+
+document.getElementById('container')
+        addEventListener('click', ativardiv)

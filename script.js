@@ -29,7 +29,10 @@ let tocarsom = (letra) => {
 
 let ativardiv = (evento) => {
     let letra = evento.target.id
-    tocarsom(letra);
+    let letrapermitida = filhos.hasOwnProperty(letra)
+    if (letrapermitida){
+        tocarsom(letra);
+    }
 
 }
 

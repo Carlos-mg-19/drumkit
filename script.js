@@ -26,15 +26,29 @@ let tocarsom = (letra) => {
     let audio = new Audio(`./sons/${filhos[letra]}`)
     audio.play();
 }
+let adicionarefeito = (letra) => document.getElementById(letra)
+                                         .classList.toggle ('active');
+
+let removerEfeito = (letra) => {
+    const efeito = document.getElementById(letra)
+    let removeractive = () => efeito.classList.remove('active')
+    efeito.addEventListener('transitionstart', removeractive);
+}
 
 let ativardiv = (evento) => {
-    let letra = evento.target.id
+    let letra = evento.type == ('click') ? evento.target.id : evento.key.toUpperCase();
     let letrapermitida = filhos.hasOwnProperty(letra)
+    
+
     if (letrapermitida){
+        adicionarefeito(letra)
         tocarsom(letra);
+        removerEfeito(letra)
     }
 
 }
 
 document.getElementById('container')
         addEventListener('click', ativardiv)
+
+window.addEventListener('keyup',ativardiv)    

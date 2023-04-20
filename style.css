@@ -40,4 +40,13 @@ body{
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
+    transform: translate(3s);
+}
+
+.active{
+    transform: scale(1.2);
+    border: 1px solid yellow;
+    box-shadow: 0 0 8px yellow;
+    box-shadow: 0 0 8px yellow;
+    box-shadow: 0 0 8px yellow;
 }
